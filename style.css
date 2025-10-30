@@ -314,3 +314,63 @@ nav{
     font-size: 35px;
 }
 
+
+@media (max-width: 765px) {
+    .section2{
+        font-family: "Source Code Pro", monospace;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .section2 .aboutme{
+        margin-top: 30px;
+        width: 100%;
+    }
+        
+    .section2 .my-tegs{
+        margin-top: 20px;
+        width: 100%;
+        color: F4F4F4;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+
+    .section2 .my-tegs .provlem-slover{
+        width: 90vw;
+        padding: 20px 15px;
+        background-color: #1A3D64;
+        border-radius: 15px;
+    }
+
+    .section2 .my-tegs .provlem-slover .ri-code-box-fill{
+        font-size: 35px;
+    }
+
+    .section2 .my-tegs .content-creator{
+        width: 90vw;
+        padding: 20px 15px;
+        background-color: #1A3D64;
+        border-radius: 15px;
+    }
+
+    .section2 .my-tegs .content-creator .ri-video-on-ai-fill{
+        font-size: 35px;
+    }
+
+    .section2 .my-tegs .visual-thinker{
+        width: 90vw;
+        padding: 20px 15px;
+        background-color: #1A3D64;
+        border-radius: 15px;
+    }
+
+    .section2 .my-tegs .visual-thinker .ri-palette-fill{
+        font-size: 35px;
+    }
+
+
+}
