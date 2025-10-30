@@ -1,0 +1,316 @@
+@import url('https://fonts.cdnfonts.com/css/agustina');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Single:wght@100..900&family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.source-code{
+    font-family: "Source Code Pro", monospace;
+}
+
+header{
+    z-index: 20;
+    color: #F4F4F4;
+    width: 100%;
+    position: fixed;
+    padding: 10px 50px;
+    background-color: #1D546C;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-family: agustina;
+    font-size: larger;
+    margin-top: 9px;
+}
+
+.pages{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 21px;
+}
+
+.pages a{
+    font-family: Inconsolata;
+    text-decoration: none;
+    color: #F4F4F4;
+}
+
+.pages button{
+    font-family: Inconsolata;
+    font-size: 18px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #F4F4F4;
+    background-color: #0C2B4E;
+}
+
+.pages-mobile{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .logo{
+        font-size: smaller;
+    }
+
+    .pages{
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    .header{
+        width: 100%;
+    }
+
+    .logo{
+        font-size: 10px;
+    }
+
+    nav a{
+        font-size: 10px;
+    }
+
+    nav .pages button{
+        font-size: 10px;
+        padding: 5px 15px;
+    }
+}
+
+.pages-mobile{
+    display: none;
+}
+
+@media (max-width: 426px) {
+    nav .pages{
+        display: none;
+        color: azure;
+    }
+
+    .pages-mobile{
+        display: block;
+        font-size: large;
+    }
+}
+
+
+.main{
+    width: 100%;
+    color: #F4F4F4;
+    background-color: #1D546C;
+    padding: 90px 30px;
+}
+
+.section1{
+    display: flex;
+    padding-top: 40px;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+
+.left{
+    width: 35%;
+}
+
+.right{
+    width: 45%;
+}
+
+.section1 .left h3{
+    font-family: "Inconsolata", monospace;
+    font-size: 5vw;
+}
+
+.section1 .left h1{
+    font-size: 10vw;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.section1 .left .hireme-btn{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #F4F4F4;
+    background-color: #0C2B4E;
+    margin-top: 20px;
+}
+
+.section1 .right .imgbg{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.section1 .right .imgbg .circle1{
+    margin-top: 100px;
+    margin-left: 300px;
+    height: 500px;
+    width: 500px;
+    border: solid 1px #F4F4F4;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.section1 .right .imgbg .circle2{
+    margin-top: 20px;
+    margin-left: 25px;
+    height: 450px;
+    width: 450px;
+    border: solid 1px #F4F4F4;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.section1 .right .myimg{
+    position: absolute;
+    height: 350px;
+    width: 40vw;
+    background-color: #0C2B4E;
+    border-radius: 10px;
+}
+
+.section1 .right .myimg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .section1 .right .myimg{
+        position: absolute;
+        height: 350px;
+        width: 300px;
+        background-color: #0C2B4E;
+        border-radius: 10px;
+    }
+}
+
+
+@media (max-width: 765px) {
+    .section1 .right .myimg{
+        position: absolute;
+        height: 250px;
+        width: 200px;
+        background-color: #0C2B4E;
+        border-radius: 10px;
+    }
+
+    .section1 .right .imgbg .circle1{
+        display: none;
+    }
+
+    .section1 .right .imgbg .circle2{
+        display: none;
+    }
+}
+
+@media (max-width: 466px) {
+    .section1 .right .myimg{
+        height: 100px;
+        width: 200px;
+        background-color: #0C2B4E;
+        border-radius: 100px;
+        overflow: hidden;
+    }
+
+    .section1{
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 40px;
+        padding-left: 10px;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .left{
+        width: 100%;
+        margin-top: 110px;
+    }
+
+    .section1 .right .imgbg .circle1{
+        display: none;
+    }
+
+    .section1 .right .imgbg .circle2{
+        display: none;
+    }
+}
+
+
+/* about me section 2 */
+
+.section2{
+    font-family: "Source Code Pro", monospace;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.section2 .aboutme{
+    margin-top: 30px;
+    width: 45%;
+}
+
+.section2 .aboutme h2{
+    font-size: 50px;
+}
+
+.section2 .my-tegs{
+    width: 45%;
+    color: F4F4F4;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.section2 .my-tegs .provlem-slover{
+    width: 42vw;
+    padding: 20px 15px;
+    background-color: #1A3D64;
+    border-radius: 15px;
+}
+
+.section2 .my-tegs .provlem-slover .ri-code-box-fill{
+    font-size: 35px;
+}
+
+.section2 .my-tegs .content-creator{
+    width: 42vw;
+    padding: 20px 15px;
+    background-color: #1A3D64;
+    border-radius: 15px;
+}
+
+.section2 .my-tegs .content-creator .ri-video-on-ai-fill{
+    font-size: 35px;
+}
+
+.section2 .my-tegs .visual-thinker{
+    width: 42vw;
+    padding: 20px 15px;
+    background-color: #1A3D64;
+    border-radius: 15px;
+}
+
+.section2 .my-tegs .visual-thinker .ri-palette-fill{
+    font-size: 35px;
+}
+
