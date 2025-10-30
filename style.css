@@ -371,6 +371,70 @@ nav{
     .section2 .my-tegs .visual-thinker .ri-palette-fill{
         font-size: 35px;
     }
+}
 
 
+/* section 3 */
+
+.section3{
+    font-family: "Source Code Pro", monospace;
+}
+
+.section3 .title-skills{
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+.section3 .title-skills h2{
+    font-size: 50px;
+}
+
+.section3 .skills-cards{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.section3 .skills-cards .skill-card{
+    width: 400px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #1A3D64;
+}
+
+.section3 .skills-cards .skill-card .title-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .skills-cards .skill-card .title-card h3{
+    font-size: 27px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-back{
+    width: 100%;
+    border-radius: 10px;
+    background-color: aqua;
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-font{
+    width: 50%;
+    border-radius: 10px;
+    background-color: rgb(13, 253, 0);
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .title-card .ri-code-box-fill{
+    font-size: 60px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .nam{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
 }
