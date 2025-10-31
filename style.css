@@ -6,10 +6,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+/* NEW: Root color variables for easy theme changes */
+:root {
+    --bg-primary: #111827; /* Very dark blue-gray */
+    --bg-secondary: #1F2937; /* Lighter dark blue-gray (for cards) */
+    --border-color: #374151; /* Subtle border color */
+    --text-primary: #F3F4F6; /* Off-white */
+    --text-secondary: #9CA3AF; /* Medium gray */
+    --accent-primary: #38BDF8; /* Bright sky blue */
+    --accent-secondary: #818CF8; /* Indigo/purple */
+    --accent-gradient: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg-primary); /* CHANGED */
+    color: var(--text-primary); /* CHANGED */
 }
 
 .source-code{
@@ -26,11 +49,14 @@
 
 header{
     z-index: 20;
-    color: #F4F4F4;
+    color: var(--text-primary); /* CHANGED */
     width: 100%;
     position: fixed;
     padding: 10px 50px;
-    background-color: #1D546C;
+    /* CHANGED: Frosted glass / blur effect */
+    background-color: rgba(23, 31, 42, 0.7); /* Semi-transparent dark bg */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
               0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -57,7 +83,13 @@ nav{
 .pages a{
     font-family: Inconsolata;
     text-decoration: none;
-    color: #F4F4F4;
+    color: var(--text-primary); /* CHANGED */
+    transition: color 0.3s; /* ADDED */
+}
+
+/* ADDED: Hover effect for links */
+.pages a:hover {
+    color: var(--accent-primary);
 }
 
 .pages button{
@@ -67,8 +99,15 @@ nav{
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    color: #F4F4F4;
-    background-color: #0C2B4E;
+    color: var(--text-primary); /* CHANGED */
+    background: var(--accent-gradient); /* CHANGED: Gradient */
+    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+}
+
+/* ADDED: Hover effect for button */
+.pages button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
 .pages-mobile{
@@ -123,15 +162,16 @@ nav{
 
 .main{
     width: 100%;
-    color: #F4F4F4;
-    background-color: #1D546C;
+    color: var(--text-primary); /* CHANGED */
+    background-color: transparent; /* CHANGED: Inherits from body */
     padding: 90px 30px;
+    padding-bottom: 0;
 }
 
 .section1{
     display: flex;
-    padding-top: 40px;
-    padding-left: 10px;
+    margin-top: 40px;
+    margin-left: 10px;
     justify-content: space-between;
 }
 
@@ -151,6 +191,17 @@ nav{
 .section1 .left h1{
     font-size: 10vw;
     font-family: "Bebas Neue", sans-serif;
+    /* ADDED: Gradient text effect */
+    background: linear-gradient(90deg, #F3F4F6, #9CA3AF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ADDED: Styling for description text */
+.section1 .left .myq p {
+    color: var(--text-secondary);
 }
 
 .section1 .left .hireme-btn{
@@ -159,9 +210,16 @@ nav{
     border-radius: 30px;
     cursor: pointer;
     font-size: 20px;
-    color: #F4F4F4;
-    background-color: #0C2B4E;
+    color: var(--text-primary); /* CHANGED */
+    background: var(--accent-gradient); /* CHANGED: Gradient */
     margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+}
+
+/* ADDED: Hover effect for hire button */
+.section1 .left .hireme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
 .section1 .right .imgbg{
@@ -175,7 +233,7 @@ nav{
     margin-left: 300px;
     height: 500px;
     width: 500px;
-    border: solid 1px #F4F4F4;
+    border: solid 1px var(--border-color); /* CHANGED: Subtle border */
     border-radius: 50%;
     background-color: transparent;
 }
@@ -185,17 +243,20 @@ nav{
     margin-left: 25px;
     height: 450px;
     width: 450px;
-    border: solid 1px #F4F4F4;
+    border: solid 1px var(--border-color); /* CHANGED: Subtle border */
     border-radius: 50%;
     background-color: transparent;
 }
 
 .section1 .right .myimg{
     position: absolute;
-    height: 350px;
+    height: 320px;
     width: 40vw;
-    background-color: #0C2B4E;
-    border-radius: 10px;
+    background-image: url(img/codingdoodle.png);
+    object-fit: cover;
+    background-color: var(--bg-secondary); /* CHANGED */
+    border-radius: 30px;
+    border: 1px solid var(--border-color); /* ADDED */
 }
 
 .section1 .right .myimg img{
@@ -210,7 +271,7 @@ nav{
         position: absolute;
         height: 350px;
         width: 300px;
-        background-color: #0C2B4E;
+        background-color: var(--bg-secondary); /* CHANGED */
         border-radius: 10px;
     }
 }
@@ -221,7 +282,7 @@ nav{
         position: absolute;
         height: 250px;
         width: 200px;
-        background-color: #0C2B4E;
+        background-color: var(--bg-secondary); /* CHANGED */
         border-radius: 10px;
     }
 
@@ -236,10 +297,10 @@ nav{
 
 @media (max-width: 466px) {
     .section1 .right .myimg{
-        height: 100px;
-        width: 200px;
-        background-color: #0C2B4E;
-        border-radius: 100px;
+        height: 110px;
+        width: 300px;
+        background-color: var(--bg-secondary); /* CHANGED */
+        border-radius: 10px;
         overflow: hidden;
     }
 
@@ -257,12 +318,43 @@ nav{
         margin-top: 110px;
     }
 
+    .section1 .left h3{
+        font-size: 50px;
+    }
+
+    .section1 .left h1{
+        font-size: 96px;
+    }
+
+    .section1 .left .myq p{
+        font-size: 20px;
+    }
+
     .section1 .right .imgbg .circle1{
         display: none;
     }
 
     .section1 .right .imgbg .circle2{
         display: none;
+    }
+
+    @media (max-width: 426px){
+        .section1 .right .myimg{
+            height: 150px;
+            width: 280px;
+            background-color: var(--bg-secondary); /* CHANGED */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .section1{
+            margin-top: -50px;
+            margin-left: 0px;
+        }
+        
+        .section1 .left{
+            margin-top: 170px;
+        }
     }
 }
 
@@ -287,11 +379,12 @@ nav{
 
 .section2 .aboutme p{
     font-size: 20px;
+    color: var(--text-secondary); /* CHANGED */
 }
 
 .section2 .my-tegs{
     width: 45%;
-    color: F4F4F4;
+    color: var(--text-primary); /* CHANGED */
     display: flex;
     flex-direction: column;
     gap: 17px;
@@ -300,34 +393,69 @@ nav{
 .section2 .my-tegs .provlem-slover{
     width: 42vw;
     padding: 20px 15px;
-    background-color: #1A3D64;
+    background-color: var(--bg-secondary); /* CHANGED */
     border-radius: 15px;
+    border: 1px solid var(--border-color); /* ADDED */
+    box-shadow: var(--shadow-md); /* ADDED */
+    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+}
+
+/* ADDED: Hover for about-me cards */
+.section2 .my-tegs .provlem-slover:hover,
+.section2 .my-tegs .content-creator:hover,
+.section2 .my-tegs .visual-thinker:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .section2 .my-tegs .provlem-slover .ri-code-box-fill{
     font-size: 35px;
+    color: var(--accent-primary); /* CHANGED */
+}
+
+/* ADDED: Styling for p tag */
+.section2 .my-tegs .provlem-slover p {
+    color: var(--text-secondary);
 }
 
 .section2 .my-tegs .content-creator{
     width: 42vw;
     padding: 20px 15px;
-    background-color: #1A3D64;
+    background-color: var(--bg-secondary); /* CHANGED */
     border-radius: 15px;
+    border: 1px solid var(--border-color); /* ADDED */
+    box-shadow: var(--shadow-md); /* ADDED */
+    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
 }
 
 .section2 .my-tegs .content-creator .ri-video-on-ai-fill{
     font-size: 35px;
+    color: var(--accent-primary); /* CHANGED */
+}
+
+/* ADDED: Styling for p tag */
+.section2 .my-tegs .content-creator p {
+    color: var(--text-secondary);
 }
 
 .section2 .my-tegs .visual-thinker{
     width: 42vw;
     padding: 20px 15px;
-    background-color: #1A3D64;
+    background-color: var(--bg-secondary); /* CHANGED */
     border-radius: 15px;
+    border: 1px solid var(--border-color); /* ADDED */
+    box-shadow: var(--shadow-md); /* ADDED */
+    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
 }
 
 .section2 .my-tegs .visual-thinker .ri-palette-fill{
     font-size: 35px;
+    color: var(--accent-primary); /* CHANGED */
+}
+
+/* ADDED: Styling for p tag */
+.section2 .my-tegs .visual-thinker p {
+    color: var(--text-secondary);
 }
 
 
@@ -348,17 +476,16 @@ nav{
     .section2 .my-tegs{
         margin-top: 20px;
         width: 100%;
-        color: F4F4F4;
+        color: var(--text-primary); /* CHANGED */
         display: flex;
         flex-direction: column;
         gap: 17px;
     }
 
-
     .section2 .my-tegs .provlem-slover{
         width: 90vw;
         padding: 20px 15px;
-        background-color: #1A3D64;
+        background-color: var(--bg-secondary); /* CHANGED */
         border-radius: 15px;
     }
 
@@ -369,7 +496,7 @@ nav{
     .section2 .my-tegs .content-creator{
         width: 90vw;
         padding: 20px 15px;
-        background-color: #1A3D64;
+        background-color: var(--bg-secondary); /* CHANGED */
         border-radius: 15px;
     }
 
@@ -380,12 +507,44 @@ nav{
     .section2 .my-tegs .visual-thinker{
         width: 90vw;
         padding: 20px 15px;
-        background-color: #1A3D64;
+        background-color: var(--bg-secondary); /* CHANGED */
         border-radius: 15px;
     }
 
     .section2 .my-tegs .visual-thinker .ri-palette-fill{
         font-size: 35px;
+    }
+}
+
+@media (max-width: 426px){
+    .section2 .aboutme h2{
+        font-size: 45px;
+    }
+
+    .section2 .aboutme p{
+        font-size: 17px;
+    }
+
+    .section2 .my-tegs{
+        margin-top: 20px;
+        width: 100%;
+        color: var(--text-primary); /* CHANGED */
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        justify-content: center;
+    }
+
+    .section2 .my-tegs .provlem-slover{
+        width: 85vw;
+    }
+
+    .section2 .my-tegs .content-creator{
+        width: 85vw;
+    }
+
+    .section2 .my-tegs .visual-thinker{
+        width: 85vw;
     }
 }
 
@@ -408,6 +567,7 @@ nav{
 
 .section3 .title-skills p{
     font-size: 20px;
+    color: var(--text-secondary); /* CHANGED */
 }
 
 
@@ -424,7 +584,9 @@ nav{
     width: 420px;
     padding: 40px 20px;
     border-radius: 16px;
-    background-color: #1A3D64;
+    background-color: var(--bg-secondary); /* CHANGED */
+    border: 1px solid var(--border-color); /* ADDED */
+    box-shadow: var(--shadow-md); /* ADDED */
 }
 
 .section3 .skills-cards .skill-card .title-card{
@@ -442,27 +604,86 @@ nav{
 .section3 .skills-cards .skill-card .progress-bars .bar-back{
     width: 100%;
     border-radius: 10px;
-    background-color: aqua;
+    background-color: var(--border-color); /* CHANGED: Subtle track */
     height: 6px;
 }
 
 .section3 .skills-cards .skill-card .progress-bars .bar-font{
-    width: 50%;
+    width: 90%; /* CHANGED: To match 90% in HTML */
     border-radius: 10px;
-    background-color: rgb(13, 253, 0);
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontc{
+    width: 85%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontjava{
+    width: 80%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontpy{
+    width: 65%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontgit{
+    width: 80%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontlinux{
+    width: 65%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontfx{
+    width: 50%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontpp{
+    width: 70%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-fontuiux{
+    width: 75%; /* CHANGED: To match 90% in HTML */
+    border-radius: 10px;
+    background: var(--accent-gradient); /* CHANGED: Gradient bar */
     height: 6px;
 }
 
 .section3 .skills-cards .skill-card .title-card .ri-code-box-fill{
     font-size: 60px;
+    color: var(--accent-primary); /* CHANGED */
 }
 
 .section3 .skills-cards .skill-card .title-card .ri-terminal-box-fill{
     font-size: 60px;
+    color: var(--accent-primary); /* CHANGED */
 }
 
 .section3 .skills-cards .skill-card .title-card .ri-lightbulb-fill{
     font-size: 60px;
+    color: var(--accent-primary); /* CHANGED */
 }
 
 .section3 .skills-cards .skill-card .progress-bars .nam{
@@ -471,7 +692,25 @@ nav{
     margin-top: 25px;
 }
 
+@media (max-width: 426px){
+    .section3 .skills-cards{
+        margin-top: 10px;
+    }
 
+    .section3 .skills-cards .skill-card{
+        padding: 20px;
+        width: 100%;
+        margin: 10px;
+    }
+
+    .section3 .title-skills h2{
+        font-size: 45px;
+    }
+
+    .section3 .title-skills p{
+        font-size: 15px;
+    }
+}
 
 /* section4 */
 
@@ -494,6 +733,7 @@ nav{
 .section4 .title-projects p{
     text-align: center;
     font-size: 20px;
+    color: var(--text-secondary); /* CHANGED */
 }
 
 .section4 .projects-cards{
@@ -508,9 +748,18 @@ nav{
 .section4 .projects-cards .project-card{
     width: 430px;
     border-radius: 16px;
-    background-color: #1A3D64;
+    background-color: var(--bg-secondary); /* CHANGED */
+    border: 1px solid var(--border-color); /* ADDED */
+    box-shadow: var(--shadow-md); /* ADDED */
     overflow: hidden;
     margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+}
+
+/* ADDED: Hover for project cards */
+.section4 .projects-cards .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2); /* Blue glow */
 }
 
 .section4 .projects-cards .project-card .project-pic{
@@ -533,6 +782,11 @@ nav{
     font-size: 30px;
 }
 
+/* ADDED: Styling for p tag */
+.section4 .projects-cards .project-card .porject-details p {
+    color: var(--text-secondary);
+}
+
 .section4 .projects-cards .project-card .porject-details .project-tegs{
     display: flex;
     flex-wrap: wrap;
@@ -541,7 +795,8 @@ nav{
 
 
 .section4 .projects-cards .project-card .porject-details .project-tegs .teg{
-    background-color: #1D546C;
+    background-color: var(--border-color); /* CHANGED: Better contrast */
+    color: var(--text-primary); /* ADDED */
     padding: 5px 9px;
     border-radius: 20px;
     margin-top: 10px;
@@ -553,10 +808,56 @@ nav{
     border-radius: 20px;
     font-size: 15px;
     font-family: "JetBrains Mono", monospace;
+    /* CHANGED: Secondary button style */
+    background-color: transparent;
+    border: 1px solid var(--accent-primary);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .section4 button a{
     text-decoration: none;
+    color: var(--accent-primary); /* CHANGED */
+    transition: color 0.3s; /* ADDED */
+}
+
+/* ADDED: Hover for secondary button */
+.section4 button:hover {
+    background-color: var(--accent-primary);
+}
+
+.section4 button:hover a {
+    color: var(--bg-primary);
+}
+
+@media (max-width: 426px){
+    .section4 .title-projects{
+        width: 100%;
+    }
+    .section4 .title-projects h2{
+        font-size: 45px;
+    }
+
+    .section4 .title-projects p{
+        font-size: 15px;
+    }
+
+    .section4 .projects-cards .project-card{
+        margin-bottom: 10px;
+    }
+
+    .section4 .projects-cards .project-card .project-pic{
+        width: 100%;
+        height: 180px;
+
+    }
+
+    .section4 .projects-cards .project-card .porject-details h3{
+        font-size: 25px;
+    }
+
+    .section4 .projects-cards .project-card .porject-details p{
+        font-size: 15px;
+    }
 }
 
 /* section 5 */
@@ -574,11 +875,14 @@ nav{
 .section5 .title-testimonials p{
     text-align: center;
     font-size: 20px;
+    color: var(--text-secondary); /* CHANGED */
 }
 
 .section5 .cards-testimonials{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .section5 .cards-testimonials .font-graphy{
@@ -587,6 +891,7 @@ nav{
 
 .section5 .cards-testimonials .font-graphy .fa-quote-left{
     font-size: 100px;
+    color: var(--accent-primary); /* CHANGED */
 }
 
 
@@ -595,21 +900,28 @@ nav{
 }
 .section5 .cards-testimonials .font-graphy .ri-arrow-right-down-line{
     font-size: 100px;
+    color: var(--text-secondary); /* CHANGED */
 }
 
 .section5 .cards-testimonials .testimonial-card{
     width: 400px;
-    background-color: #0C2B4E;
+    background-color: var(--bg-secondary); /* CHANGED */
+    border: 1px solid var(--border-color); /* ADDED */
+    box-shadow: var(--shadow-md); /* ADDED */
     padding: 30px 40px;
     border-radius: 30px;
-    margin-right: 50px;
+}
+
+/* ADDED: Styling for comment p tag */
+.section5 .cards-testimonials .testimonial-card .comments p {
+    color: #D1D5DB; /* Slightly lighter for readability */
 }
 
 .section5 .cards-testimonials .testimonial-card .stars{
     display: flex;
     gap: 5px;
     margin-top: 5px;
-    color: gold;
+    color: #FBBF24; /* CHANGED: Warmer gold */
 }
 
 .section5 .cards-testimonials .testimonial-card .profile-details{
@@ -629,5 +941,302 @@ nav{
     width: 60px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #F4F4F4;
+    border: 3px solid var(--accent-primary); /* CHANGED */
+}
+
+/* ADDED: Styling for p tag */
+
+.section5 .cards-testimonials .testimonial-card .name-and-position p {
+    color: var(--text-secondary);
+}
+
+
+@media (max-width: 665px) {
+    .section5 .cards-testimonials .font-graphy{
+        width: 100%;
+    }
+
+    .section5 .cards-testimonials .font-graphy .fa-quote-left{
+        font-size: 60px;
+        color: var(--accent-primary); /* CHANGED */
+    }
+
+
+    .section5 .cards-testimonials .font-graphy h1{
+        text-align: center;
+        font-size: 50px;
+    }
+    .section5 .cards-testimonials .font-graphy .ri-arrow-right-down-line{
+        text-align: end;
+        font-size: 60px;
+        color: var(--text-secondary); /* CHANGED */
+    }
+
+    .section5 .cards-testimonials .testimonial-card{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 426px) {
+    .section5 .cards-testimonials .font-graphy h1{
+        font-size: 30px;
+    }
+
+    .section5 .cards-testimonials .testimonial-card{
+        width: 100%;
+        background-color: var(--bg-secondary); /* CHANGED */
+        border: 1px solid var(--border-color); /* ADDED */
+        box-shadow: var(--shadow-md); /* ADDED */
+        padding: 25px;
+        border-radius: 30px;
+    }
+
+    .section5 .title-testimonials h2{
+        display: none;
+    }
+
+    .section5 .title-testimonials p{
+        display: none;
+    }
+
+    .section5 .cards-testimonials .testimonial-card .comments p {
+        font-size: 15px;
+    }
+}
+
+/* section6 */
+
+.section6 .title-contacts{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.section6 .title-contacts h2{
+    text-align: center;
+    font-size: 50px;
+}
+
+.section6 .title-contacts p{
+    text-align: center;
+    font-size: 20px;
+    color: var(--text-secondary); /* CHANGED */
+}
+
+.section6 .contacts-details{
+    display: flex;
+}
+
+.section6 .contacts-details .social-details{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.section6 .contacts-details .social-details .email{
+    margin-left: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.section6 .contacts-details .social-details .email .ri-mail-line{
+    font-size: 40px;
+    color: var(--accent-primary); /* CHANGED */
+}
+
+.section6 .contacts-details .social-details .email .ri-phone-line{
+    font-size: 40px;
+    color: var(--accent-primary); /* CHANGED */
+}
+
+.section6 .contacts-details .social-details .email .ri-map-pin-line{
+    font-size: 40px;
+    color: var(--accent-primary); /* CHANGED */
+}
+
+.section6 .contacts-details .social-details .email h5{
+    font-size: 20px;
+}
+
+/* ADDED: Styling for p tag */
+.section6 .contacts-details .social-details .social-texts p {
+    color: var(--text-secondary);
+}
+
+.section6 .contacts-details .form-inputs{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section6 .contacts-details .form-inputs input{
+    height: 40px;
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid var(--border-color); /* CHANGED */
+    background-color: var(--bg-secondary); /* CHANGED */
+    color: var(--text-primary); /* ADDED */
+    border-radius: 10px;
+    font-size: 17px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* ADDED */
+}
+
+
+.section6 .contacts-details .form-inputs textarea{
+    height: 200px;
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid var(--border-color); /* CHANGED */
+    background-color: var(--bg-secondary); /* CHANGED */
+    color: var(--text-primary); /* ADDED */
+    border-radius: 10px;
+    font-size: 17px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* ADDED */
+}
+
+/* ADDED: Focus state for inputs */
+.section6 .contacts-details .form-inputs input:focus,
+.section6 .contacts-details .form-inputs textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+}
+
+.section6 .contacts-details .form-inputs .btn{
+    display: flex;
+    justify-content: center;
+}
+
+.section6 .contacts-details .form-inputs .btn button{
+    padding: 20px 150px;
+    border: none;
+    border-radius: 20px;
+    /* CHANGED: Primary button style */
+    color: var(--text-primary);
+    background: var(--accent-gradient);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* ADDED: Hover for send button */
+.section6 .contacts-details .form-inputs .btn button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+@media (max-width: 665px) {
+    .section6 .contacts-details{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .section6 .contacts-details .social-details{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 20px;
+    }
+
+    .section6 .contacts-details .form-inputs{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 426px) {
+    .section6 .title-contacts h2{
+        font-size: 35px;
+    }
+
+    .section6 .title-contacts p{
+        font-size: 15px;
+    }
+
+    .section6 .contacts-details .form-inputs .btn button{
+        padding: 20px 100px;
+        font-size: 14px;
+    }
+
+
+    .section6 .contacts-details .social-details{
+        margin-top: 60px;
+    }
+
+    .section6 .contacts-details .social-details .email .ri-mail-line{
+        font-size: 30px;
+        color: var(--accent-primary); /* CHANGED */
+    }
+
+    .section6 .contacts-details .social-details .email .ri-phone-line{
+        font-size: 30px;
+        color: var(--accent-primary); /* CHANGED */
+    }
+
+    .section6 .contacts-details .social-details .email .ri-map-pin-line{
+        font-size: 30px;
+        color: var(--accent-primary); /* CHANGED */
+    }
+
+    .section6 .contacts-details .social-details .email h5{
+        font-size: 15px;
+    }
+
+    /* ADDED: Styling for p tag */
+    .section6 .contacts-details .social-details .social-texts p {
+        font-size: 15px;
+    }
+}
+
+.footer{
+    margin-bottom: 15px;
+}
+
+.footer .icons{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    gap: 10px;
+    /* CHANGED: Dark fade-out */
+}
+
+.footer a{
+    text-decoration: none;
+    color: #F3F4F6;
+}
+
+.footer i{
+    font-size: 40px;
+}
+
+.footer p{
+    text-align: center;
+}
+
+@media (max-width: 426px){
+    .footer i{
+        font-size: 30px;
+    }
+
+    .footer p{
+        font-size: 13px;
+    }
+
+    .footer .icons{
+        height: 120px;
+        margin-bottom: 10px;
+        gap: 10px;
+        /* CHANGED: Dark fade-out */
+    }
 }
