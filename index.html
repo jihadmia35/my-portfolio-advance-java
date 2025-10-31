@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    <!-- mobile menubar -->
     <div class="mobile-nav-menu">
         <div class="close-icon"><i class="fa-solid fa-xmark"></i></div>
         <a href="#hero">Home</a>
@@ -25,7 +24,6 @@
     </div>
 
 
-    <!-- navigation bar -->
     <header>
         <nav>
             <div class="logo"><h2>Jihad Mia</h2></div>
@@ -46,7 +44,6 @@
     </header>
 
     <div class="main">
-        <!-- hero section -->
         <div class="section1" id="hero">
             <div class="left">
                 <h3>Hey, I am</h3>
@@ -71,7 +68,6 @@ with a love for solving problems and crafting engaging content.</p>
             </div>
         </div>
 
-        <!-- about me section -->
         <div class="section2" id="about">
             <div class="aboutme">
                 <h2>About Me</h2>
@@ -97,7 +93,6 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
             </div>
         </div>
 
-        <!-- skills section -->
         <div class="section3" id="skills">
             <div class="title-skills">
                 <h2 class="orbino">Skills & Expertise</h2>
@@ -226,7 +221,6 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
             </div>
         </div>
 
-        <!-- projects section -->
         <div class="section4" id="project">
             <div class="title-projects">
                 <h2 class="orbino">Featured Projects</h2>
@@ -285,7 +279,6 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
             <button><a href="https://github.com/jihadmia35" target="_blank">View More Projects</a></button>
         </div>
 
-        <!-- Testimonials section -->
         <div class="section5" id="testimonial">
             <div class="title-testimonials">
                 <h2 class="orbino">What People Say</h2>
@@ -321,7 +314,8 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
 
                 <div class="testimonial-card">
                     <div class="comments"><p class="jet">
-“Working with Jihad on video editing and design projects has always been a great experience. He blends creativity with technical skill perfectly, making each video and design more polished and impactful. His ideas, attention to detail, and dedication bring energy and quality to every project he’s involved in.”                    <div class="profile-details">
+“Working with Jihad on video editing and design projects has always been a great experience. He blends creativity with technical skill perfectly, making each video and design more polished and impactful. His ideas, attention to detail, and dedication bring energy and quality to every project he’s involved in.”</p></div>
+                    <div class="profile-details">
                         <div class="profile-pic">
                             <img src="img/hossainvai.enc" alt="">
                         </div>
@@ -341,7 +335,6 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
             </div>
         </div>
 
-        <!-- contacts section -->
         <div class="section6" id="contacts">
             <div class="title-contacts">
                 <h2 class="orbino">Let's Connect</h2>
@@ -374,25 +367,31 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
                     </div>
                 </div>
 
-                <div class="form-inputs">
-                    <h4>Name:</h4>
-                    <input type="text" placeholder="Name">
+                <form class="form-inputs" action="https://formspree.io/f/xjkpaqgl" method="POST">
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
                     <br><br>
-                    <h4>Email:</h4>
-                    <input type="text" name="" id="" placeholder="Email">
+                
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                     <br><br>
-                    <h4>Subject:</h4>
-                    <input type="text" placeholder="Subject">
+                
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
                     <br><br>
-                    <h4>Message:</h4>
-                    <textarea name="" id="" placeholder="Write the Message..."></textarea>
+                
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Write the Message..." required></textarea>
                     <br><br>
-                    <div class="btn"><button>Send Message</button></div>
-                </div>
+                
+                    <div class="btn">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <!-- footer -->
         <div class="footer">
             <div class="icons">
                 <a href="https://github.com/jihadmia35" target="_blank"><i class="ri-github-fill"></i></a>
@@ -407,4 +406,3 @@ Beyond code, I'm a visual thinker with expertise in video editing and design. Wh
     <script src="script.js"></script>
 </body>
 </html>
-

@@ -1026,6 +1026,11 @@ nav{
     justify-content: center;
 }
 
+.section6 .contacts-details .form-inputs label {
+    color: var(--text-primary);
+    margin-bottom: 5px; /* Added for spacing */
+}
+
 .section6 .contacts-details .form-inputs input{
     height: 40px;
     width: 100%;
