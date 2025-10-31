@@ -6,15 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-/* NEW: Root color variables for easy theme changes */
 :root {
-    --bg-primary: #111827; /* Very dark blue-gray */
-    --bg-secondary: #1F2937; /* Lighter dark blue-gray (for cards) */
-    --border-color: #374151; /* Subtle border color */
-    --text-primary: #F3F4F6; /* Off-white */
-    --text-secondary: #9CA3AF; /* Medium gray */
-    --accent-primary: #38BDF8; /* Bright sky blue */
-    --accent-secondary: #818CF8; /* Indigo/purple */
+    --bg-primary: #111827; 
+    --bg-secondary: #1F2937; 
+    --border-color: #374151; 
+    --text-primary: #F3F4F6; 
+    --text-secondary: #9CA3AF;
+    --accent-primary: #38BDF8; 
+    --accent-secondary: #818CF8;
     --accent-gradient: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.3);
@@ -31,8 +30,8 @@ html {
 }
 
 body{
-    background-color: var(--bg-primary); /* CHANGED */
-    color: var(--text-primary); /* CHANGED */
+    background-color: var(--bg-primary); 
+    color: var(--text-primary);
 }
 
 .source-code{
@@ -49,12 +48,11 @@ body{
 
 header{
     z-index: 20;
-    color: var(--text-primary); /* CHANGED */
+    color: var(--text-primary);
     width: 100%;
     position: fixed;
     padding: 10px 50px;
-    /* CHANGED: Frosted glass / blur effect */
-    background-color: rgba(23, 31, 42, 0.7); /* Semi-transparent dark bg */
+    background-color: rgba(23, 31, 42, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
@@ -83,11 +81,10 @@ nav{
 .pages a{
     font-family: Inconsolata;
     text-decoration: none;
-    color: var(--text-primary); /* CHANGED */
-    transition: color 0.3s; /* ADDED */
+    color: var(--text-primary);
+    transition: color 0.3s;
 }
 
-/* ADDED: Hover effect for links */
 .pages a:hover {
     color: var(--accent-primary);
 }
@@ -99,12 +96,11 @@ nav{
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    color: var(--text-primary); /* CHANGED */
-    background: var(--accent-gradient); /* CHANGED: Gradient */
-    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+    color: var(--text-primary);
+    background: var(--accent-gradient); 
+    transition: transform 0.3s, box-shadow 0.3s; 
 }
 
-/* ADDED: Hover effect for button */
 .pages button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
@@ -125,7 +121,7 @@ nav{
 }
 
 @media (max-width: 768px) {
-    .header{
+    header{ 
         width: 100%;
     }
 
@@ -156,14 +152,15 @@ nav{
     .pages-mobile{
         display: block;
         font-size: large;
+        cursor: pointer;
     }
 }
 
 
 .main{
     width: 100%;
-    color: var(--text-primary); /* CHANGED */
-    background-color: transparent; /* CHANGED: Inherits from body */
+    color: var(--text-primary); 
+    background-color: transparent; 
     padding: 90px 30px;
     padding-bottom: 0;
 }
@@ -191,7 +188,6 @@ nav{
 .section1 .left h1{
     font-size: 10vw;
     font-family: "Bebas Neue", sans-serif;
-    /* ADDED: Gradient text effect */
     background: linear-gradient(90deg, #F3F4F6, #9CA3AF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -199,7 +195,6 @@ nav{
     color: transparent;
 }
 
-/* ADDED: Styling for description text */
 .section1 .left .myq p {
     color: var(--text-secondary);
 }
@@ -210,13 +205,12 @@ nav{
     border-radius: 30px;
     cursor: pointer;
     font-size: 20px;
-    color: var(--text-primary); /* CHANGED */
-    background: var(--accent-gradient); /* CHANGED: Gradient */
+    color: var(--text-primary); 
+    background: var(--accent-gradient); 
     margin-top: 20px;
-    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ADDED: Hover effect for hire button */
 .section1 .left .hireme-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
@@ -233,7 +227,7 @@ nav{
     margin-left: 300px;
     height: 500px;
     width: 500px;
-    border: solid 1px var(--border-color); /* CHANGED: Subtle border */
+    border: solid 1px var(--border-color);
     border-radius: 50%;
     background-color: transparent;
 }
@@ -243,7 +237,7 @@ nav{
     margin-left: 25px;
     height: 450px;
     width: 450px;
-    border: solid 1px var(--border-color); /* CHANGED: Subtle border */
+    border: solid 1px var(--border-color); 
     border-radius: 50%;
     background-color: transparent;
 }
@@ -254,9 +248,9 @@ nav{
     width: 40vw;
     background-image: url(img/codingdoodle.png);
     object-fit: cover;
-    background-color: var(--bg-secondary); /* CHANGED */
+    background-color: var(--bg-secondary); 
     border-radius: 30px;
-    border: 1px solid var(--border-color); /* ADDED */
+    border: 1px solid var(--border-color); 
 }
 
 .section1 .right .myimg img{
@@ -271,7 +265,7 @@ nav{
         position: absolute;
         height: 350px;
         width: 300px;
-        background-color: var(--bg-secondary); /* CHANGED */
+        background-color: var(--bg-secondary);
         border-radius: 10px;
     }
 }
@@ -282,7 +276,7 @@ nav{
         position: absolute;
         height: 250px;
         width: 200px;
-        background-color: var(--bg-secondary); /* CHANGED */
+        background-color: var(--bg-secondary);
         border-radius: 10px;
     }
 
@@ -299,7 +293,7 @@ nav{
     .section1 .right .myimg{
         height: 110px;
         width: 300px;
-        background-color: var(--bg-secondary); /* CHANGED */
+        background-color: var(--bg-secondary);
         border-radius: 10px;
         overflow: hidden;
     }
@@ -342,7 +336,7 @@ nav{
         .section1 .right .myimg{
             height: 150px;
             width: 280px;
-            background-color: var(--bg-secondary); /* CHANGED */
+            background-color: var(--bg-secondary);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -358,8 +352,6 @@ nav{
     }
 }
 
-
-/* about me section 2 */
 
 .section2{
     font-family: "Source Code Pro", monospace;
@@ -379,12 +371,12 @@ nav{
 
 .section2 .aboutme p{
     font-size: 20px;
-    color: var(--text-secondary); /* CHANGED */
+    color: var(--text-secondary);
 }
 
 .section2 .my-tegs{
     width: 45%;
-    color: var(--text-primary); /* CHANGED */
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     gap: 17px;
@@ -393,14 +385,13 @@ nav{
 .section2 .my-tegs .provlem-slover{
     width: 42vw;
     padding: 20px 15px;
-    background-color: var(--bg-secondary); /* CHANGED */
+    background-color: var(--bg-secondary);
     border-radius: 15px;
-    border: 1px solid var(--border-color); /* ADDED */
-    box-shadow: var(--shadow-md); /* ADDED */
-    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ADDED: Hover for about-me cards */
 .section2 .my-tegs .provlem-slover:hover,
 .section2 .my-tegs .content-creator:hover,
 .section2 .my-tegs .visual-thinker:hover {
@@ -410,10 +401,9 @@ nav{
 
 .section2 .my-tegs .provlem-slover .ri-code-box-fill{
     font-size: 35px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
-/* ADDED: Styling for p tag */
 .section2 .my-tegs .provlem-slover p {
     color: var(--text-secondary);
 }
@@ -421,19 +411,18 @@ nav{
 .section2 .my-tegs .content-creator{
     width: 42vw;
     padding: 20px 15px;
-    background-color: var(--bg-secondary); /* CHANGED */
+    background-color: var(--bg-secondary);
     border-radius: 15px;
-    border: 1px solid var(--border-color); /* ADDED */
-    box-shadow: var(--shadow-md); /* ADDED */
-    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .section2 .my-tegs .content-creator .ri-video-on-ai-fill{
     font-size: 35px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
-/* ADDED: Styling for p tag */
 .section2 .my-tegs .content-creator p {
     color: var(--text-secondary);
 }
@@ -441,19 +430,18 @@ nav{
 .section2 .my-tegs .visual-thinker{
     width: 42vw;
     padding: 20px 15px;
-    background-color: var(--bg-secondary); /* CHANGED */
+    background-color: var(--bg-secondary);
     border-radius: 15px;
-    border: 1px solid var(--border-color); /* ADDED */
-    box-shadow: var(--shadow-md); /* ADDED */
-    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .section2 .my-tegs .visual-thinker .ri-palette-fill{
     font-size: 35px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
-/* ADDED: Styling for p tag */
 .section2 .my-tegs .visual-thinker p {
     color: var(--text-secondary);
 }
@@ -476,7 +464,7 @@ nav{
     .section2 .my-tegs{
         margin-top: 20px;
         width: 100%;
-        color: var(--text-primary); /* CHANGED */
+        color: var(--text-primary);
         display: flex;
         flex-direction: column;
         gap: 17px;
@@ -485,7 +473,7 @@ nav{
     .section2 .my-tegs .provlem-slover{
         width: 90vw;
         padding: 20px 15px;
-        background-color: var(--bg-secondary); /* CHANGED */
+        background-color: var(--bg-secondary);
         border-radius: 15px;
     }
 
@@ -496,7 +484,7 @@ nav{
     .section2 .my-tegs .content-creator{
         width: 90vw;
         padding: 20px 15px;
-        background-color: var(--bg-secondary); /* CHANGED */
+        background-color: var(--bg-secondary);
         border-radius: 15px;
     }
 
@@ -507,7 +495,7 @@ nav{
     .section2 .my-tegs .visual-thinker{
         width: 90vw;
         padding: 20px 15px;
-        background-color: var(--bg-secondary); /* CHANGED */
+        background-color: var(--bg-secondary);
         border-radius: 15px;
     }
 
@@ -528,7 +516,7 @@ nav{
     .section2 .my-tegs{
         margin-top: 20px;
         width: 100%;
-        color: var(--text-primary); /* CHANGED */
+        color: var(--text-primary);
         display: flex;
         flex-direction: column;
         gap: 17px;
@@ -549,8 +537,6 @@ nav{
 }
 
 
-/* section 3 */
-
 .section3{
     font-family: "Source Code Pro", monospace;
 }
@@ -567,7 +553,7 @@ nav{
 
 .section3 .title-skills p{
     font-size: 20px;
-    color: var(--text-secondary); /* CHANGED */
+    color: var(--text-secondary);
 }
 
 
@@ -584,9 +570,9 @@ nav{
     width: 420px;
     padding: 40px 20px;
     border-radius: 16px;
-    background-color: var(--bg-secondary); /* CHANGED */
-    border: 1px solid var(--border-color); /* ADDED */
-    box-shadow: var(--shadow-md); /* ADDED */
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
 }
 
 .section3 .skills-cards .skill-card .title-card{
@@ -604,86 +590,66 @@ nav{
 .section3 .skills-cards .skill-card .progress-bars .bar-back{
     width: 100%;
     border-radius: 10px;
-    background-color: var(--border-color); /* CHANGED: Subtle track */
+    background-color: var(--border-color);
+    height: 6px;
+}
+
+.section3 .skills-cards .skill-card .progress-bars .bar-font,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontc,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontjava,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontpy,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontgit,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontlinux,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontfx,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontpp,
+.section3 .skills-cards .skill-card .progress-bars .bar-fontuiux {
+    border-radius: 10px;
+    background: var(--accent-gradient);
     height: 6px;
 }
 
 .section3 .skills-cards .skill-card .progress-bars .bar-font{
-    width: 90%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 90%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontc{
-    width: 85%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 85%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontjava{
-    width: 80%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 80%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontpy{
-    width: 65%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 65%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontgit{
-    width: 80%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 80%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontlinux{
-    width: 65%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 65%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontfx{
-    width: 50%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 50%;
 }
-
 .section3 .skills-cards .skill-card .progress-bars .bar-fontpp{
-    width: 70%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
+    width: 70%;
+}
+.section3 .skills-cards .skill-card .progress-bars .bar-fontuiux{
+    width: 75%;
 }
 
-.section3 .skills-cards .skill-card .progress-bars .bar-fontuiux{
-    width: 75%; /* CHANGED: To match 90% in HTML */
-    border-radius: 10px;
-    background: var(--accent-gradient); /* CHANGED: Gradient bar */
-    height: 6px;
-}
 
 .section3 .skills-cards .skill-card .title-card .ri-code-box-fill{
     font-size: 60px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 .section3 .skills-cards .skill-card .title-card .ri-terminal-box-fill{
     font-size: 60px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 .section3 .skills-cards .skill-card .title-card .ri-lightbulb-fill{
     font-size: 60px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 .section3 .skills-cards .skill-card .progress-bars .nam{
@@ -712,8 +678,6 @@ nav{
     }
 }
 
-/* section4 */
-
 .section4{
     display: flex;
     flex-direction: column;
@@ -733,7 +697,7 @@ nav{
 .section4 .title-projects p{
     text-align: center;
     font-size: 20px;
-    color: var(--text-secondary); /* CHANGED */
+    color: var(--text-secondary);
 }
 
 .section4 .projects-cards{
@@ -748,18 +712,17 @@ nav{
 .section4 .projects-cards .project-card{
     width: 430px;
     border-radius: 16px;
-    background-color: var(--bg-secondary); /* CHANGED */
-    border: 1px solid var(--border-color); /* ADDED */
-    box-shadow: var(--shadow-md); /* ADDED */
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
     margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s; /* ADDED */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ADDED: Hover for project cards */
 .section4 .projects-cards .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2); /* Blue glow */
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
 }
 
 .section4 .projects-cards .project-card .project-pic{
@@ -782,7 +745,6 @@ nav{
     font-size: 30px;
 }
 
-/* ADDED: Styling for p tag */
 .section4 .projects-cards .project-card .porject-details p {
     color: var(--text-secondary);
 }
@@ -795,8 +757,8 @@ nav{
 
 
 .section4 .projects-cards .project-card .porject-details .project-tegs .teg{
-    background-color: var(--border-color); /* CHANGED: Better contrast */
-    color: var(--text-primary); /* ADDED */
+    background-color: var(--border-color);
+    color: var(--text-primary);
     padding: 5px 9px;
     border-radius: 20px;
     margin-top: 10px;
@@ -808,19 +770,18 @@ nav{
     border-radius: 20px;
     font-size: 15px;
     font-family: "JetBrains Mono", monospace;
-    /* CHANGED: Secondary button style */
     background-color: transparent;
     border: 1px solid var(--accent-primary);
     transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
 }
 
 .section4 button a{
     text-decoration: none;
-    color: var(--accent-primary); /* CHANGED */
-    transition: color 0.3s; /* ADDED */
+    color: var(--accent-primary);
+    transition: color 0.3s;
 }
 
-/* ADDED: Hover for secondary button */
 .section4 button:hover {
     background-color: var(--accent-primary);
 }
@@ -860,8 +821,6 @@ nav{
     }
 }
 
-/* section 5 */
-
 .section5 .title-testimonials{
     margin-top: 50px;
     margin-bottom: 30px;
@@ -875,7 +834,7 @@ nav{
 .section5 .title-testimonials p{
     text-align: center;
     font-size: 20px;
-    color: var(--text-secondary); /* CHANGED */
+    color: var(--text-secondary);
 }
 
 .section5 .cards-testimonials{
@@ -891,7 +850,7 @@ nav{
 
 .section5 .cards-testimonials .font-graphy .fa-quote-left{
     font-size: 100px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 
@@ -900,28 +859,27 @@ nav{
 }
 .section5 .cards-testimonials .font-graphy .ri-arrow-right-down-line{
     font-size: 100px;
-    color: var(--text-secondary); /* CHANGED */
+    color: var(--text-secondary);
 }
 
 .section5 .cards-testimonials .testimonial-card{
     width: 400px;
-    background-color: var(--bg-secondary); /* CHANGED */
-    border: 1px solid var(--border-color); /* ADDED */
-    box-shadow: var(--shadow-md); /* ADDED */
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
     padding: 30px 40px;
     border-radius: 30px;
 }
 
-/* ADDED: Styling for comment p tag */
 .section5 .cards-testimonials .testimonial-card .comments p {
-    color: #D1D5DB; /* Slightly lighter for readability */
+    color: #D1D5DB;
 }
 
 .section5 .cards-testimonials .testimonial-card .stars{
     display: flex;
     gap: 5px;
     margin-top: 5px;
-    color: #FBBF24; /* CHANGED: Warmer gold */
+    color: #FBBF24;
 }
 
 .section5 .cards-testimonials .testimonial-card .profile-details{
@@ -941,10 +899,9 @@ nav{
     width: 60px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--accent-primary); /* CHANGED */
+    border: 3px solid var(--accent-primary);
 }
 
-/* ADDED: Styling for p tag */
 
 .section5 .cards-testimonials .testimonial-card .name-and-position p {
     color: var(--text-secondary);
@@ -958,7 +915,7 @@ nav{
 
     .section5 .cards-testimonials .font-graphy .fa-quote-left{
         font-size: 60px;
-        color: var(--accent-primary); /* CHANGED */
+        color: var(--accent-primary);
     }
 
 
@@ -969,7 +926,7 @@ nav{
     .section5 .cards-testimonials .font-graphy .ri-arrow-right-down-line{
         text-align: end;
         font-size: 60px;
-        color: var(--text-secondary); /* CHANGED */
+        color: var(--text-secondary);
     }
 
     .section5 .cards-testimonials .testimonial-card{
@@ -984,9 +941,9 @@ nav{
 
     .section5 .cards-testimonials .testimonial-card{
         width: 100%;
-        background-color: var(--bg-secondary); /* CHANGED */
-        border: 1px solid var(--border-color); /* ADDED */
-        box-shadow: var(--shadow-md); /* ADDED */
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-md);
         padding: 25px;
         border-radius: 30px;
     }
@@ -1004,8 +961,6 @@ nav{
     }
 }
 
-/* section6 */
-
 .section6 .title-contacts{
     margin-top: 50px;
     margin-bottom: 30px;
@@ -1019,7 +974,7 @@ nav{
 .section6 .title-contacts p{
     text-align: center;
     font-size: 20px;
-    color: var(--text-secondary); /* CHANGED */
+    color: var(--text-secondary);
 }
 
 .section6 .contacts-details{
@@ -1043,24 +998,23 @@ nav{
 
 .section6 .contacts-details .social-details .email .ri-mail-line{
     font-size: 40px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 .section6 .contacts-details .social-details .email .ri-phone-line{
     font-size: 40px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 .section6 .contacts-details .social-details .email .ri-map-pin-line{
     font-size: 40px;
-    color: var(--accent-primary); /* CHANGED */
+    color: var(--accent-primary);
 }
 
 .section6 .contacts-details .social-details .email h5{
     font-size: 20px;
 }
 
-/* ADDED: Styling for p tag */
 .section6 .contacts-details .social-details .social-texts p {
     color: var(--text-secondary);
 }
@@ -1076,12 +1030,12 @@ nav{
     height: 40px;
     width: 100%;
     padding: 10px 10px;
-    border: 1px solid var(--border-color); /* CHANGED */
-    background-color: var(--bg-secondary); /* CHANGED */
-    color: var(--text-primary); /* ADDED */
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     border-radius: 10px;
     font-size: 17px;
-    transition: border-color 0.3s, box-shadow 0.3s; /* ADDED */
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 
@@ -1089,15 +1043,14 @@ nav{
     height: 200px;
     width: 100%;
     padding: 10px 10px;
-    border: 1px solid var(--border-color); /* CHANGED */
-    background-color: var(--bg-secondary); /* CHANGED */
-    color: var(--text-primary); /* ADDED */
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     border-radius: 10px;
     font-size: 17px;
-    transition: border-color 0.3s, box-shadow 0.3s; /* ADDED */
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* ADDED: Focus state for inputs */
 .section6 .contacts-details .form-inputs input:focus,
 .section6 .contacts-details .form-inputs textarea:focus {
     outline: none;
@@ -1114,7 +1067,6 @@ nav{
     padding: 20px 150px;
     border: none;
     border-radius: 20px;
-    /* CHANGED: Primary button style */
     color: var(--text-primary);
     background: var(--accent-gradient);
     font-weight: bold;
@@ -1122,7 +1074,6 @@ nav{
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ADDED: Hover for send button */
 .section6 .contacts-details .form-inputs .btn button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
@@ -1173,24 +1124,23 @@ nav{
 
     .section6 .contacts-details .social-details .email .ri-mail-line{
         font-size: 30px;
-        color: var(--accent-primary); /* CHANGED */
+        color: var(--accent-primary);
     }
 
     .section6 .contacts-details .social-details .email .ri-phone-line{
         font-size: 30px;
-        color: var(--accent-primary); /* CHANGED */
+        color: var(--accent-primary);
     }
 
     .section6 .contacts-details .social-details .email .ri-map-pin-line{
         font-size: 30px;
-        color: var(--accent-primary); /* CHANGED */
+        color: var(--accent-primary);
     }
 
     .section6 .contacts-details .social-details .email h5{
         font-size: 15px;
     }
 
-    /* ADDED: Styling for p tag */
     .section6 .contacts-details .social-details .social-texts p {
         font-size: 15px;
     }
@@ -1208,7 +1158,6 @@ nav{
     height: 150px;
     margin-bottom: 10px;
     gap: 10px;
-    /* CHANGED: Dark fade-out */
 }
 
 .footer a{
@@ -1237,6 +1186,69 @@ nav{
         height: 120px;
         margin-bottom: 10px;
         gap: 10px;
-        /* CHANGED: Dark fade-out */
     }
+}
+
+.mobile-nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    z-index: 1000;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-nav-menu.open {
+    transform: translateX(0%);
+}
+
+.mobile-nav-menu a {
+    font-family: Inconsolata;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 24px;
+}
+
+.mobile-nav-menu a:hover {
+    color: var(--accent-primary);
+}
+
+.mobile-nav-menu .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.mobile-nav-menu .close-icon:hover {
+    color: var(--text-primary);
+}
+
+.mobile-nav-menu button {
+    font-family: Inconsolata;
+    font-size: 18px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: var(--text-primary);
+    background: var(--accent-gradient);
+}
+
+.mobile-nav-menu button a {
+    font-size: 18px;
 }
