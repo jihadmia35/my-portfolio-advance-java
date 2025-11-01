@@ -172,6 +172,22 @@ nav{
     justify-content: space-between;
 }
 
+.down-icon{
+    display: flex;
+    align-items: end;
+}
+
+.down-icon a{
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+
+.down-icon .ri-arrow-down-s-line{
+    
+    font-size: 90px;
+    font-weight: 10;
+}
+
 .left{
     width: 35%;
 }
@@ -285,6 +301,10 @@ nav{
     }
 
     .section1 .right .imgbg .circle2{
+        display: none;
+    }
+
+    .down-icon{
         display: none;
     }
 }
@@ -766,6 +786,7 @@ nav{
 }
 
 .section4 button{
+    color: var(--accent-secondary);
     padding: 15px 18px;
     border-radius: 20px;
     font-size: 15px;
@@ -783,6 +804,7 @@ nav{
 }
 
 .section4 button:hover {
+    color: var(--text-primary);
     background-color: var(--accent-primary);
 }
 
@@ -1257,3 +1279,4 @@ nav{
 .mobile-nav-menu button a {
     font-size: 18px;
 }
+
